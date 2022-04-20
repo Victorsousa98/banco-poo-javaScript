@@ -1,4 +1,9 @@
 export class ContaCorrente {
+
+    constructor(cliente, agencia) {
+        this.cliente = cliente;
+        this.agencia = agencia;
+    }
     _cliente;
     agencia;
 
@@ -6,9 +11,11 @@ export class ContaCorrente {
     _saldo = 0;
 
     set cliente(cliente) {
-        if(cliente instanceof Cliente) {
+        // if (!(cliente instanceof Cliente)) {
+        //     throw new Error('Cliente inválido');
+        // }
             this._cliente = cliente;
-        }
+        
     }
     get cliente() {
         return this._cliente;
