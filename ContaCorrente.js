@@ -1,5 +1,8 @@
-class ContaCorrente {
+export class ContaCorrente {
+    ciente;
     agencia;
+
+
     _saldo = 0;
 
     sacar(valor) {
@@ -16,5 +19,13 @@ class ContaCorrente {
         }
         this._saldo += valor;
         return this._saldo;
+    }
+
+    tranferir(valor, conta) {
+        if (valor <= 0) {
+            throw new Error('Valor inválido para transferência');
+        }
+        this.sacar(valor);
+        conta.depositar(valor);
     }
 }
