@@ -7,4 +7,4 @@ const cliente2 = new Cliente('Maria', '987.654.321-20');
 const conta1 = new ContaCorrente(cliente1, '123');
 const conta2 = new ContaCorrente(cliente2, '456');
 
-console.log(conta1);
+console.log(ContaCorrente.numeroDecontas);
