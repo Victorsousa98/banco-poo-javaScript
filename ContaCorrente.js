@@ -1,9 +1,22 @@
 export class ContaCorrente {
-    ciente;
+    _cliente;
     agencia;
 
 
     _saldo = 0;
+
+    set cliente(cliente) {
+        if(cliente instanceof Cliente) {
+            this._cliente = cliente;
+        }
+    }
+    get cliente() {
+        return this._cliente;
+    }
+
+    get saldo() {
+        return this._saldo;
+    }
 
     sacar(valor) {
         if (valor > this._saldo) {
